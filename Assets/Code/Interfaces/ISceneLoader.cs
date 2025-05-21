@@ -1,5 +1,3 @@
-using UnityEngine.SceneManagement;
-
 public enum SceneRef
 {
     AceOfShadows,

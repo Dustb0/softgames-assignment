@@ -6,7 +6,8 @@ public class TitleMenu : MonoBehaviour
 {
     private UIDocument uiDocument;
     private Button phoenixButton;
-    
+    private Button wordsButton;
+
     [Inject]
     private ISceneLoader sceneLoader;
 
@@ -18,13 +19,27 @@ public class TitleMenu : MonoBehaviour
 
         // Setup and Bind UI-Elements
         uiDocument = GetComponent<UIDocument>();
+        RegisterUIElements();
+    }
+
+    private void RegisterUIElements()
+    {
         phoenixButton = uiDocument.rootVisualElement.Q<Button>("PhoenixButton");
         phoenixButton.RegisterCallback<ClickEvent>(OnClickPhoenixButton);
+
+        wordsButton = uiDocument.rootVisualElement.Q<Button>("WordsButton");
+        wordsButton.RegisterCallback<ClickEvent>(OnClickWordsButton);
     }
 
     public void OnClickPhoenixButton(ClickEvent evt)
     {
         sceneLoader.LoadScene(SceneRef.PhoenixFlame);
+        CloseMenu();
+    }
+
+    public void OnClickWordsButton(ClickEvent evt)
+    {
+        sceneLoader.LoadScene(SceneRef.MagicWords);
         CloseMenu();
     }
 
@@ -42,5 +57,8 @@ public class TitleMenu : MonoBehaviour
     {
         instance.sceneLoader.UnloadCurrentScene();
         instance.gameObject.SetActive(true);
+        
+        // Elements have to be re-registered because they get destoryed on disable
+        instance.RegisterUIElements();
     }
 }

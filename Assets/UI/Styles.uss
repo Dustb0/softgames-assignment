@@ -20,7 +20,7 @@ Button {
     font-size: 32px;
     -unity-font-style: bold;
     margin-bottom: 15px;
-    height: 70px;
+    height: 60px;
 }
 
 Button:hover {
@@ -35,10 +35,10 @@ Button:hover {
 
 .Secondary {
     background-color: rgba(0, 0, 0, 0);
-    border-top-width: 6px;
-    border-right-width: 6px;
-    border-bottom-width: 6px;
-    border-left-width: 6px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
     border-left-color: rgb(255, 255, 255);
     border-right-color: rgb(255, 255, 255);
     border-top-color: rgb(255, 255, 255);
@@ -62,4 +62,41 @@ Button:hover {
 .SubMenu Button {
     margin-bottom: 0;
     margin-right: 50px;
+}
+
+.Dialogue {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.33);
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    width: 75%;
+    white-space: pre-wrap;
+    flex-direction: row;
+    margin-bottom: 15px;
+    -unity-font-definition: url("project://database/Assets/UI/SEGUIEMJ.TTF?fileID=12800000&guid=0722bb383c5801d4b8c4fe4567878fa3&type=3#SEGUIEMJ");
+    align-items: center;
+    align-content: flex-start;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.Dialogue Label {
+    flex-grow: 1;
+    -unity-text-align: middle-left;
+    white-space: pre-wrap;
+    flex-wrap: wrap;
+}
+
+.Avatar {
+    -unity-background-scale-mode: scale-to-fit;
+    background-position-x: left 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(123, 123, 123);
+    min-width: 25px;
+    min-height: 25px;
+    margin-right: 10px;
 }

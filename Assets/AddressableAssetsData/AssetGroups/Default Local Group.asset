@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: ca36b63ea7328754d94d6ee17495fb1d
   m_SerializeEntries:
+  - m_GUID: 0722bb383c5801d4b8c4fe4567878fa3
+    m_Address: Assets/UI/SEGUIEMJ.TTF
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4f37512a9ed002f4b83890c403238bea
     m_Address: Assets/Sprites/S Gradient.png
     m_ReadOnly: 0
