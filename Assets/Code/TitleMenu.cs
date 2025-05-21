@@ -15,13 +15,14 @@ public class TitleMenu : MonoBehaviour
     void Start()
     {
         instance = this;
-        uiDocument = GetComponent<UIDocument>();
 
+        // Setup and Bind UI-Elements
+        uiDocument = GetComponent<UIDocument>();
         phoenixButton = uiDocument.rootVisualElement.Q<Button>("PhoenixButton");
         phoenixButton.RegisterCallback<ClickEvent>(OnClickPhoenixButton);
     }
 
-    private void OnClickPhoenixButton(ClickEvent evt)
+    public void OnClickPhoenixButton(ClickEvent evt)
     {
         sceneLoader.LoadScene(SceneRef.PhoenixFlame);
         CloseMenu();
