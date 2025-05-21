@@ -16,8 +16,7 @@ public abstract class BaseSubMenu : MonoBehaviour
 
     private void OnClickTitleButton(ClickEvent evt)
     {
-        SceneLoader.UnloadCurrentScene();
-        TitleMenu.ShowMenu();
+        TitleMenu.BackToTitle();
     }
 
    

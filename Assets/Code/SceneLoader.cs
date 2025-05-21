@@ -1,35 +1,25 @@
-using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader
+public class SceneLoader : ISceneLoader
 {
-    private static AsyncOperationHandle<SceneInstance> handle;
+    private AsyncOperationHandle<SceneInstance> handle;
 
-    public enum Scene
+    public void LoadScene(SceneRef scene)
     {
-        AceOfShadows,
-        MagicWords,
-        PhoenixFlame
-    }
-
-    public static void LoadScene(Scene scene)
-    {
-        var sceneAddress = "";
-
-        switch (scene)
+        string address = scene switch
         {
-            case Scene.PhoenixFlame:
-                sceneAddress = "Assets/Scenes/PhoenixScene.unity";
-                break;
-        }
+            SceneRef.MagicWords => "Assets/Scenes/WordsScene.unity",
+            SceneRef.PhoenixFlame => "Assets/Scenes/PhoenixScene.unity",
+            SceneRef.AceOfShadows => throw new System.NotImplementedException(),
+        };
 
-        handle = Addressables.LoadSceneAsync(sceneAddress, LoadSceneMode.Additive);
+        handle = Addressables.LoadSceneAsync(address, LoadSceneMode.Additive);
     }
 
-    public static void UnloadCurrentScene()
+    public void UnloadCurrentScene()
     {
         if (handle.IsValid())
         {

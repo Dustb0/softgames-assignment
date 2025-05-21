@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Packed Assets
   m_GUID: 5eb274a466cc7a04c96e23b32180dcaf
   m_SerializeEntries:
+  - m_GUID: 11713f65077397a448c010916f8d23dc
+    m_Address: Assets/Scenes/WordsScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 84b35f74faaf3fd45b4422095ca4ded0
     m_Address: Assets/Scenes/PhoenixScene.unity
     m_ReadOnly: 0

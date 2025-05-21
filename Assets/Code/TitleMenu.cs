@@ -1,13 +1,14 @@
-using System;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class TitleMenu : MonoBehaviour
 {
     private UIDocument uiDocument;
     private Button phoenixButton;
+    
+    [Inject]
+    private ISceneLoader sceneLoader;
 
     private static TitleMenu instance;
 
@@ -22,7 +23,7 @@ public class TitleMenu : MonoBehaviour
 
     private void OnClickPhoenixButton(ClickEvent evt)
     {
-        SceneLoader.LoadScene(SceneLoader.Scene.PhoenixFlame);
+        sceneLoader.LoadScene(SceneRef.PhoenixFlame);
         CloseMenu();
     }
 
@@ -36,8 +37,9 @@ public class TitleMenu : MonoBehaviour
         phoenixButton.UnregisterCallback<ClickEvent>(OnClickPhoenixButton);
     }
 
-    public static void ShowMenu()
+    public static void BackToTitle()
     {
+        instance.sceneLoader.UnloadCurrentScene();
         instance.gameObject.SetActive(true);
     }
 }
