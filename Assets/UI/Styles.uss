@@ -27,4 +27,39 @@ Button:hover {
     transition-duration: 0.5s;
     scale: 1.1 1.1;
     color: rgb(255, 90, 140);
+    border-left-color: rgb(255, 90, 140);
+    border-right-color: rgb(255, 90, 140);
+    border-top-color: rgb(255, 90, 140);
+    border-bottom-color: rgb(255, 90, 140);
+}
+
+.Secondary {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 6px;
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    border-left-width: 6px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.SubMenu .Menu {
+    height: 15%;
+    max-height: 15%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    background-color: rgba(0, 0, 0, 0.33);
+    margin-bottom: 5%;
+}
+
+.SubMenu Button {
+    margin-bottom: 0;
+    margin-right: 50px;
 }
