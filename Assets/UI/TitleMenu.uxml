@@ -3,7 +3,7 @@
     <ui:VisualElement class="Background" style="flex-grow: 1; justify-content: center;">
         <ui:Label text="Softgames &#10;Unity Developer Assignment" class="Heading" />
         <ui:VisualElement style="flex-grow: 0; width: 40%; align-self: center;">
-            <ui:Button text="Ace of Shadows" />
+            <ui:Button text="Ace of Shadows" name="AceButton" />
             <ui:Button text="Magic Words" name="WordsButton" />
             <ui:Button text="Phoenix Flame" name="PhoenixButton" />
         </ui:VisualElement>

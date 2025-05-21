@@ -13,7 +13,7 @@ public class SceneLoader : ISceneLoader
         {
             SceneRef.MagicWords => "Assets/Scenes/WordsScene.unity",
             SceneRef.PhoenixFlame => "Assets/Scenes/PhoenixScene.unity",
-            SceneRef.AceOfShadows => throw new System.NotImplementedException(),
+            SceneRef.AceOfShadows => "Assets/Scenes/AceScene.unity",
         };
 
         handle = Addressables.LoadSceneAsync(address, LoadSceneMode.Additive);

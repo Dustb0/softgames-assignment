@@ -7,6 +7,7 @@ public class TitleMenu : MonoBehaviour
     private UIDocument uiDocument;
     private Button phoenixButton;
     private Button wordsButton;
+    private Button aceButton;
 
     [Inject]
     private ISceneLoader sceneLoader;
@@ -29,6 +30,9 @@ public class TitleMenu : MonoBehaviour
 
         wordsButton = uiDocument.rootVisualElement.Q<Button>("WordsButton");
         wordsButton.RegisterCallback<ClickEvent>(OnClickWordsButton);
+
+        aceButton = uiDocument.rootVisualElement.Q<Button>("AceButton");
+        aceButton.RegisterCallback<ClickEvent>(OnClickAceButton);
     }
 
     public void OnClickPhoenixButton(ClickEvent evt)
@@ -40,6 +44,12 @@ public class TitleMenu : MonoBehaviour
     public void OnClickWordsButton(ClickEvent evt)
     {
         sceneLoader.LoadScene(SceneRef.MagicWords);
+        CloseMenu();
+    }
+
+    public void OnClickAceButton(ClickEvent evt)
+    {
+        sceneLoader.LoadScene(SceneRef.AceOfShadows);
         CloseMenu();
     }
 
