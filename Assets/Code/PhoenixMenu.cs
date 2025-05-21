@@ -2,17 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PhoenixMenu : MonoBehaviour
+public class PhoenixMenu : BaseSubMenu
 {
     public Animator FireController;
 
-    private UIDocument uiDocument;
     private Button updateFireButton;
 
-    void Start()
+    protected override void Start()
     {
-        uiDocument = GetComponent<UIDocument>();
-
+        base.Start();
         updateFireButton = uiDocument.rootVisualElement.Q<Button>("UpdateFireButton");
         updateFireButton.RegisterCallback<ClickEvent>(OnClickUpdateFireButton);
     }

@@ -9,8 +9,11 @@ public class TitleMenu : MonoBehaviour
     private UIDocument uiDocument;
     private Button phoenixButton;
 
+    private static TitleMenu instance;
+
     void Start()
     {
+        instance = this;
         uiDocument = GetComponent<UIDocument>();
 
         phoenixButton = uiDocument.rootVisualElement.Q<Button>("PhoenixButton");
@@ -31,5 +34,10 @@ public class TitleMenu : MonoBehaviour
     private void OnDestroy()
     {
         phoenixButton.UnregisterCallback<ClickEvent>(OnClickPhoenixButton);
+    }
+
+    public static void ShowMenu()
+    {
+        instance.gameObject.SetActive(true);
     }
 }
