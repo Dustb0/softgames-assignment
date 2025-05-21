@@ -100,3 +100,12 @@ Button:hover {
     min-height: 25px;
     margin-right: 10px;
 }
+
+.FPSLabel {
+    position: absolute;
+    font-size: 10px;
+    -unity-font-style: bold;
+    color: rgb(207, 207, 207);
+    text-shadow: 1px 1px 0.4px rgba(0, 0, 0, 0.67);
+    background-color: rgba(0, 0, 0, 0.31);
+}
