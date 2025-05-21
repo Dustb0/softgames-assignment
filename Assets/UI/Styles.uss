@@ -1,0 +1,22 @@
+.Heading {
+    font-size: 48px;
+    -unity-text-align: upper-center;
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
+}
+
+.Background {
+    background-image: url("project://database/Assets/Sprites/S%20Gradient.png?fileID=2800000&guid=4f37512a9ed002f4b83890c403238bea&type=3#S Gradient");
+}
+
+Button {
+    background-color: rgb(255, 255, 255);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    font-size: 32px;
+    -unity-font-style: bold;
+}
