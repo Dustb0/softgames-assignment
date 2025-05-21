@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Zenject;
 
+/// <summary>
+/// Implementation of the IDialogueLoader interface to load dialogue and avatars from a specific endpoint.
+/// </summary>
 public class HttpDialogueLoader : IDialogueLoader
 {
     private readonly string endpoint;

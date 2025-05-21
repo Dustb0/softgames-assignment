@@ -11,6 +11,10 @@ public struct CardStack
     public TextMeshPro Label;
 }
 
+/// <summary>
+/// Builds and animates a set of Card-GameObjects. 
+/// Disables itself once finished and calls the OnFinishAnimation event which can be assigned in the Inpsector.
+/// </summary>
 public class CardAnimator : MonoBehaviour
 {
     [Header("Card Setup")]

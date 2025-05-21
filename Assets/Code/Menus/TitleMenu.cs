@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
 
+/// <summary>
+/// The Main Menu from which all other sub menus / scenes are called.
+/// </summary>
 public class TitleMenu : MonoBehaviour
 {
     private UIDocument uiDocument;

@@ -1,8 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
 
+/// <summary>
+/// Baseclass for all menus in the sub scenes / games. 
+/// Provides functionality such as returning to the Title Screen or displaying FPS.
+/// </summary>
 public abstract class BaseSubMenu : MonoBehaviour
 {
     protected UIDocument uiDocument;
