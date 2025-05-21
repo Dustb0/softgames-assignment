@@ -12,15 +12,16 @@ public class TitleMenu : MonoBehaviour
     [Inject]
     private ISceneLoader sceneLoader;
 
-    private static TitleMenu instance;
+    [Inject]
+    private IMenuService menuService;
 
     void Start()
     {
-        instance = this;
-
         // Setup and Bind UI-Elements
         uiDocument = GetComponent<UIDocument>();
         RegisterUIElements();
+
+        menuService.OnReturnToTitle += OnBackToTitle;
     }
 
     private void RegisterUIElements()
@@ -63,12 +64,12 @@ public class TitleMenu : MonoBehaviour
         phoenixButton.UnregisterCallback<ClickEvent>(OnClickPhoenixButton);
     }
 
-    public static void BackToTitle()
+    public void OnBackToTitle()
     {
-        instance.sceneLoader.UnloadCurrentScene();
-        instance.gameObject.SetActive(true);
+        sceneLoader.UnloadCurrentScene();
+        gameObject.SetActive(true);
         
         // Elements have to be re-registered because they get destoryed on disable
-        instance.RegisterUIElements();
+        RegisterUIElements();
     }
 }

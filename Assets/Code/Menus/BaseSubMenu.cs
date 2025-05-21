@@ -1,12 +1,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 
 public abstract class BaseSubMenu : MonoBehaviour
 {
     protected UIDocument uiDocument;
     private Button backToTitleButton;
     private Label fpsLabel;
+
+    [Inject]
+    private IMenuService menuService;
 
     int frameCount;
     float fpsElapsedTime;
@@ -38,7 +42,7 @@ public abstract class BaseSubMenu : MonoBehaviour
 
     private void OnClickTitleButton(ClickEvent evt)
     {
-        TitleMenu.BackToTitle();
+        menuService.BackToTitleMenu();
     }
    
 }
