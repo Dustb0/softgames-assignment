@@ -19,4 +19,12 @@ Button {
     border-left-width: 0;
     font-size: 32px;
     -unity-font-style: bold;
+    margin-bottom: 15px;
+    height: 70px;
+}
+
+Button:hover {
+    transition-duration: 0.5s;
+    scale: 1.1 1.1;
+    color: rgb(255, 90, 140);
 }
